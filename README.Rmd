@@ -1,0 +1,42 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# deunicode
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This is a wrapper around the rust crate deunicode: https://docs.rs/deunicode/latest/deunicode/
+
+## Installation
+
+``` r
+devtools::install_github("Close-your-eyes/deunicode")
+```
+
+## Example
+
+```{r example}
+# library(deunicode)
+deunicode::deunicode(x = c("näme1",
+                           "næme2",
+                           "nameç",
+                           "北亰",
+                           "げんまい茶",
+                           "🦄☣",
+                           "…",
+                           "ᔕᓇᓇ"))
+```
+
