@@ -10,6 +10,24 @@
 #' @useDynLib deunicode, .registration = TRUE
 NULL
 
+#' Transliterates Unicode strings to ASCII
+#'
+#' This is a wrapper around rust crate 'deunicode':
+#' https://docs.rs/deunicode/latest/deunicode/
+#'
+#' @param x character vector
+#'
+#' @return modified character vector
+#' @export
+#'
+#' @examples
+#' deunicode(c("näme1",
+#'             "næme2",
+#'             "北亰",
+#'             "げんまい茶",
+#'             "🦄☣",
+#'             "…",
+#'             "ᔕᓇᓇ"))
 deunicode <- function(x) .Call(wrap__deunicode, x)
 
 
